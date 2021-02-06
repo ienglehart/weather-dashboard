@@ -5,8 +5,9 @@ var weatherContainerEl = document.querySelector('#print-here');
 var formSubmitHandler = function(event){
   console.log("click");
   event.preventDefault();
-  var location = locationInputEl.value;
-
+  var location = locationInputEl.value.trim();
+  //displayWeather();
+  //console.log(location);
   if (location){
     getWeather(location);
 
@@ -16,10 +17,10 @@ var formSubmitHandler = function(event){
   }
 }
 
-var getWeather = function() {
+var getWeather = function(location) {
   // format the github api url
-  var location = locationInputEl;
-  var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+{location}+'&appid=339dea2bbca309f35c984f29f1697e78';
+  // var location = locationInputEl;
+  var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+ location +'&appid=339dea2bbca309f35c984f29f1697e78';
   
   // make a get request to url
   fetch(apiUrl)
@@ -29,7 +30,7 @@ var getWeather = function() {
         console.log(response);
         response.json().then(function(data) {
           console.log(data);
-          displayWeather(data, searchTerm);
+          displayWeather(data, location);
         });
       } else {
         alert("Error: " + response.statusText);
@@ -40,8 +41,13 @@ var getWeather = function() {
     });
 };
 
-var displayWeather = function(data, searchTerm) {
-  weatherContainerEl.appendChild(data)
+
+var displayWeather = function(data, location) {
+  var weatherEl = document.createElement("a");
+  var textnode = document.createTextNode = "data main";
+  weatherEl.appendChild(textnode);
+
+  document.getElementById("weather").appendChild(weatherEl);
 };
 
 userFormEl.addEventListener("submit", formSubmitHandler);
