@@ -1,0 +1,6 @@
+.hero{
+    display: grid;
+    place-items: center;
+    padding: 15px;
+    background-image: url("../img/background.jpg");
+}
