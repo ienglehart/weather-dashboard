@@ -6,31 +6,29 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body  class="form-parent">
     <header class = "hero">
-        <h1 class="page-title">Weather yay!</h1>
-        <p>look up a location to see the weather for the week!</p>
+        <h1 class="page-title">Today's Weather Report</h1>
+        <p>Look up a location below to see the today's weather!</p>
     </header>
 
     <main>
-
-        <div class="card">
-            <h3 class="card-header">Search By Location</h3>
+        
+        <div class="card location-form">
+            <h3 class="card-header">Enter a Location</h3>
             <form id="user-form" class="card-body">
-                <label>enter location:</label>
                 <input name="location" id="location" type="text" class="form-input" placeholder="Search Here!">
                 <button type="submit" class="btn">Get Weather</button>
             </form>
         </div>
+        
 
         <div id="weather" class="print-here">
-            
+            <div id="location-name"></div>
+            <div id="location-temp"></div>
+            <div id="location-weather"></div> 
         </div>
-
-        <div>
-            center iterated cards to display each day's weather
-        </div>
-
+        
     </main>
     <script src="./assets/js/script.js"></script>
 </body>
