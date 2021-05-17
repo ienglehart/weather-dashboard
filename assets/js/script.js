@@ -49,7 +49,7 @@ var displayWeather = function(data) {
   nameEl.append = nameData;
 
   var tempEl = document.getElementById("location-temp");
-  var tempData = "hi, this will be location"; // data passed in from api here
+  var tempData = data.temp; // data passed in from api here
   tempEl.innerText = tempData;
 
   var weatherEl = document.getElementById("location-weather");
