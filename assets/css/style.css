@@ -1,11 +1,12 @@
 :root{
-    --dark: #120309;
-    --subdark: #2E0F15;
-    --mid: #70163C;
+    --dark: #212529;
+    --subdark:#343A40;
+    --mid: #6C757D;
     --sublight: #95B2B8;
     --light: #7EC9A3;
     --lightHVR: #3C9066;
-    --bg: #DAE5E7;
+    --lightText: whitesmoke;
+    --bg: #495057;
 }
 
 * {
@@ -15,21 +16,22 @@
 body{
     display: grid;
     place-items: center;
-    background-color: var(--bg);
+    background-color: var(--subdark);
 }
 .hero{
     display: grid;
     place-items: center;
     width: 100%;
     padding: 15px;
-    background-color: var(--mid);
-    color: whitesmoke;
+    background-color: var(--dark);
+    color: var(--lightText);
 }
 .page-title{
     padding: 5px;
 }
 
 .location-form {
+    color: var(--lightText);
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -78,10 +80,15 @@ body{
 }
 
 .weather-display {
+    color: var(--lightText);
     display: grid;
-    grid-template: auto 1fr auto / auto 1fr auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    /*grid-template: auto 1fr auto / auto 1fr auto;*/
     text-align: center;
+    column-gap: 30px;
 }
+
 .weather-title {
     padding: 2rem;
     grid-column: 1 / 4;
@@ -93,6 +100,7 @@ body{
 
 .weather-mid {
     grid-column: 2 / 3;
+    
 }
 
 .weather-right {
